@@ -1,3 +1,4 @@
+import random
 class Cards:
 	#
 	def __init__(self,suit,value):
@@ -42,13 +43,16 @@ class Deck:
 			raise ValueError("all cards have been dealt")
 	def shuffle(self):
 		if len(self.caard)==52:
-			return self.caard.shuffle()
+			random.shuffle(self.caard)
+			return self.caard
 		else:
-			raise ValueError("Only full decks can be shuffled")
+			return ValueError("Only full decks can be shuffled")
 
 deck1= Deck()
 
 print(deck1)
 print(deck1.count())
+print(deck1.shuffle())
 print(deck1._deal(10))
+print(deck1.shuffle())
 print(deck1.count())
