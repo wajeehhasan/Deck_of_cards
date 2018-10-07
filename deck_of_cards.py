@@ -39,7 +39,12 @@ class Deck:
 				self.dealed.append(self.caard.pop())
 		return self.dealed
 		if len(self.caard)==0:
-			raise ValueError "all cards have been dealt"
+			raise ValueError("all cards have been dealt")
+	def shuffle(self):
+		if len(self.caard)==52:
+			return self.caard.shuffle()
+		else:
+			raise ValueError("Only full decks can be shuffled")
 
 deck1= Deck()
 
