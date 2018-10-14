@@ -17,6 +17,13 @@ class Deck:
 	values=["A","2","3","4","5","6","7",
 	"8","9","10","J","Q","K"]
 	#
+	def __iter__(self):
+		return self
+	def __next__(self):
+		th=self._deal(1)
+		if th==[]:
+			raise StopIteration
+		return th
 	def __init__(self):
 		self.caard=[]
 		for st in Deck.suits:
@@ -46,6 +53,9 @@ class Deck:
 			random.shuffle(self.caard)
 			return self.caard
 		else:
-			return ValueError("Only full decks can be shuffled")
+			return ValueError("Only full decks can be shuffled")	
 
 deck1= Deck()
+
+for x in deck1:
+	print(x)
