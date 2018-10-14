@@ -49,10 +49,3 @@ class Deck:
 			return ValueError("Only full decks can be shuffled")
 
 deck1= Deck()
-
-print(deck1)
-print(deck1.count())
-print(deck1.shuffle())
-print(deck1._deal(10))
-print(deck1.shuffle())
-print(deck1.count())
